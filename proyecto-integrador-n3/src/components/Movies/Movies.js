@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import MoviesCard from '../MoviesCard/MoviesCard';
+import './Movies.css'
 
 class Movies extends Component{
     constructor(props){
@@ -57,11 +58,9 @@ class Movies extends Component{
                 })
             }
         )
-       
-
-
-
     }
+
+
 
     deleteMovie(peliculaABorrar){
         let peliculasQueQuedan = this.state.peliculas.filter( pelicula => pelicula.id !== peliculaABorrar);
@@ -73,10 +72,10 @@ class Movies extends Component{
     render(){
         return(
             <React.Fragment>
-                <div className="row card-filter">
+                <div>
                     {/* Aquí colocá un componente con un formulario que permita filtrar las tarjetas en base a los que escriba el usuario */}
                 </div>                
-                <div>                
+                <div className= 'movie-card'>                
                     { 
                         this.state.isLoaded === false ?
                         <p>Cargando...</p> 
