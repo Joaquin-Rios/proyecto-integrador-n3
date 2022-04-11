@@ -4,7 +4,7 @@ function Footer(){
     return(
         <>
     <footer>
-        <ul class="team">
+        <ul className="team">
             <li>Joaquin Rios</li>
             <li>Rolon Francisco</li>
             
