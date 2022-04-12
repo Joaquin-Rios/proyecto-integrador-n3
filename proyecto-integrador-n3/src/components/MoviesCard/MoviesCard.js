@@ -22,7 +22,7 @@ class MoviesCard extends Component{
 
     render(){
         return (
-            <div>
+            <div className ="Tarjetas">
                 <img src={`https://image.tmdb.org/t/p/original${this.props.dataPelicula.poster_path}`} alt="" />
                 <h4>{this.props.dataPelicula.title}</h4>
                 {this.state.oculto ?

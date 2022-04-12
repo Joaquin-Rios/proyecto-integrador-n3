@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import './Movies.css'
+import Buscador from '../Buscador/Buscador';
 
 class Movies extends Component{
     constructor(props){
@@ -74,6 +75,7 @@ class Movies extends Component{
             <React.Fragment>
                 <div>
                     {/* Aquí colocá un componente con un formulario que permita filtrar las tarjetas en base a los que escriba el usuario */}
+
                 </div>                
                 <div className= 'movie-card'>                
                     { 
