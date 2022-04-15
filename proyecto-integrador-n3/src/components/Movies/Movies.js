@@ -61,6 +61,14 @@ class Movies extends Component{
         )
     }
 
+    busquedaDePeliculas(entregaMovies){
+        let busquedaDePeliculas = this.state.peliculas.filter((element)=>element.title.toLowerCase().includes(entregaMovies.toLowerCase()))
+        this.setState({
+            peliculas : busquedaDePeliculas
+        })
+        console.log(this.state.peliculas)
+    }
+
 
 
     deleteMovie(peliculaABorrar){
@@ -74,8 +82,8 @@ class Movies extends Component{
         return(
             <React.Fragment>
                 <div>
+                <Buscador/>
                     {/* Aquí colocá un componente con un formulario que permita filtrar las tarjetas en base a los que escriba el usuario */}
-
                 </div>                
                 <div className= 'movie-card'>                
                     { 
@@ -84,7 +92,7 @@ class Movies extends Component{
                         :
                         this.state.peliculas.map((pelicula, idx)=><MoviesCard key={pelicula.title + idx} dataPelicula={pelicula} delete={(peliculaABorrar)=>this.deleteMovie(peliculaABorrar)} />) 
                         //La arrow function, para borrar, necesita saber a quién borrar por eso debemos pasar los parámetros.
-                    } 
+                    }
                 </div>
                 <button onClick={()=>this.addMovies()}> Más peliculas</button>
                
