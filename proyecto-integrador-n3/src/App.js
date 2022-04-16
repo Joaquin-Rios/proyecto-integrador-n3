@@ -11,13 +11,13 @@ function App() {
       <Header/>
       </div>
 
-      <div className='Movies'> 
+      <main> 
       <Movies/>
-      </div>
+      </main>
 
-      <div> 
+      
       <Footer/>
-      </div>
+      
 
     </div>
   );
