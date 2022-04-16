@@ -66,7 +66,7 @@ class Movies extends Component{
         this.setState({
             peliculas : busquedaDePeliculas
         })
-        console.log(this.state.peliculas)
+        
     }
 
 
@@ -82,8 +82,9 @@ class Movies extends Component{
         return(
             <React.Fragment>
                 <div>
-                <Buscador/>
-                    {/* Aquí colocá un componente con un formulario que permita filtrar las tarjetas en base a los que escriba el usuario */}
+                {/* Aquí colocá un componente con un formulario que permita filtrar las tarjetas en base a los que escriba el usuario */}
+                {<Buscador filtrarMovies = {(filtrar)=> this.busquedaDePeliculas(filtrar)} />}
+
                 </div>                
                 <div className= 'movie-card'>                
                     { 

@@ -13,7 +13,7 @@ class Buscador extends Component{
         event.preventDefailt()
     }
     controlarCambios(event){
-        this.setState({filterBy: event.target.value},()=> this.props.busquedaDePeliculas(this.state.filterBy))
+        this.setState({filterBy: event.target.value},()=> this.props.filtrarMovies(this.state.filterBy))
         
     }
 
