@@ -11,8 +11,8 @@ class Movies extends Component{
             peliculas:[],
             //nexturl:[],  //Para tener la página siguiente.
             pelisBackup: [],
-            paginaActual: undefined
-            
+            paginaActual: undefined,
+            order : true
         }
     }
     
@@ -70,7 +70,6 @@ class Movies extends Component{
     }
 
 
-
     deleteMovie(peliculaABorrar){
         let peliculasQueQuedan = this.state.peliculas.filter( pelicula => pelicula.id !== peliculaABorrar);
         this.setState({
@@ -78,23 +77,52 @@ class Movies extends Component{
         })
     }
 
+    orderMoviesRow(){
+        this.setState({
+            order : true
+        })
+    }
+
+    orderMoviesColumn(){
+        this.setState({
+            order : false
+        })
+    }
+
+
     render(){
         return(
             <React.Fragment>
-                <div>
-                {/* Aquí colocá un componente con un formulario que permita filtrar las tarjetas en base a los que escriba el usuario */}
-                {<Buscador filtrarMovies = {(filtrar)=> this.busquedaDePeliculas(filtrar)} />}
-
-                </div>                
-                <div className= 'movie-card'>                
-                    { 
-                        this.state.isLoaded === false ?
-                        <p>Cargando...</p> 
+                <div className='navBar'>
+                        {/* Aquí colocá un componente con un formulario que permita filtrar las tarjetas en base a los que escriba el usuario */}
+                    {<Buscador filtrarMovies = {(filtrar)=> this.busquedaDePeliculas(filtrar)} />}
+                    <section>
+                        <a onClick={() => this.orderMoviesRow()} className="fas fa-th"></a>
+                        <a onClick={() => this.orderMoviesColumn()} className="fas fa-align-justify"></a>
+                    </section> 
+                </div> 
+                {
+                    this.state.order === true ?
+                        <article className='MoviesRow'>
+                            { 
+                                this.state.isLoaded === false ?
+                                <p>Cargando...</p> 
+                                :
+                                this.state.peliculas.map((pelicula, idx)=><MoviesCard key={pelicula.title + idx} dataPelicula={pelicula} delete={(peliculaABorrar)=>this.deleteMovie(peliculaABorrar)} />) 
+                                //La arrow function, para borrar, necesita saber a quién borrar por eso debemos pasar los parámetros.
+                            }
+                        </article>
                         :
-                        this.state.peliculas.map((pelicula, idx)=><MoviesCard key={pelicula.title + idx} dataPelicula={pelicula} delete={(peliculaABorrar)=>this.deleteMovie(peliculaABorrar)} />) 
-                        //La arrow function, para borrar, necesita saber a quién borrar por eso debemos pasar los parámetros.
-                    }
-                </div>
+                        <article className='MoviesColumn'>
+                            { 
+                                this.state.isLoaded === false ?
+                                <p>Cargando...</p> 
+                                :
+                                this.state.peliculas.map((pelicula, idx)=><MoviesCard key={pelicula.title + idx} dataPelicula={pelicula} delete={(peliculaABorrar)=>this.deleteMovie(peliculaABorrar)} />) 
+                                //La arrow function, para borrar, necesita saber a quién borrar por eso debemos pasar los parámetros.
+                            }
+                        </article>
+                } 
                 <button onClick={()=>this.addMovies()}> Más peliculas</button>
                
             </React.Fragment>

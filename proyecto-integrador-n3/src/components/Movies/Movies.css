@@ -1,11 +1,23 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-.movie-card{
-    display: flex;
-    flex-wrap: wrap;
-    
+.navBar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
 }
+
+article.moviesRow{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+article.moviesColumn{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+

@@ -1,5 +1,5 @@
 import react, {Component} from 'react'
-import Movies from '../Movies/Movies'
+
 
 class Buscador extends Component{
     constructor(props){

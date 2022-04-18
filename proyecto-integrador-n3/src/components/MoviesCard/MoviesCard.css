@@ -1,12 +1,33 @@
-img {
-    height: 100%;
-    width: 100px;
-    justify-content: center;
-}
-/*
-.Tarjetas{
-    display: flex;
-    flex-wrap: wrap;
-}
-*/
 
+.tarjetas{
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    width: 24%;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+}
+.tarjetas img{
+    width: 100%;
+    margin-bottom: 20px; 
+}
+
+.botonTarjeta{
+    background-color: #1aadc7;
+    border-radius: 8px;
+  
+    box-sizing: border-box;
+    color: #0e0505;
+    cursor: pointer;
+    display: inline-block;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    margin: 10px;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+}

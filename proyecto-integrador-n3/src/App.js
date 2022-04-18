@@ -1,15 +1,16 @@
 import './App.css';
-import Header from './components/Header/Header';
+
 import Footer from './components/Footer/Footer';
 import Movies from './components/Movies/Movies';
-import Buscador from './components/Buscador/Buscador';
+import Header from './components/Header/Header';
+
 
 function App() {
   return (
     <div className="App">
-      <div> 
-      <Header/>
-      </div>
+     <div>
+       <Header/>
+     </div>
 
       <main> 
       <Movies/>

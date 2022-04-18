@@ -6,10 +6,7 @@ function Header(){
         <>
         <header>
         <h1>OnFilms</h1>
-        <section>
-            <i className="fas fa-th"></i>
-            <i className="fas fa-align-justify"></i>
-        </section>
+        
         </header>
         </>
     )
