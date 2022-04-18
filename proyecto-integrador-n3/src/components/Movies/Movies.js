@@ -97,8 +97,8 @@ class Movies extends Component{
                         {/* Aquí colocá un componente con un formulario que permita filtrar las tarjetas en base a los que escriba el usuario */}
                     {<Buscador filtrarMovies = {(filtrar)=> this.busquedaDePeliculas(filtrar)} />}
                     <section>
-                        <a onClick={() => this.orderMoviesRow()} className="fas fa-th"></a>
-                        <a onClick={() => this.orderMoviesColumn()} className="fas fa-align-justify"></a>
+                        <i onClick={() => this.orderMoviesRow()} className="fas fa-th"></i>
+                        <i onClick={() => this.orderMoviesColumn()} className="fas fa-align-justify"></i>
                     </section> 
                 </div> 
                 {
@@ -123,7 +123,7 @@ class Movies extends Component{
                             }
                         </article>
                 } 
-                <button onClick={()=>this.addMovies()}> Más peliculas</button>
+                <button className='botonVerMas' onClick={()=>this.addMovies()}> Add Films</button>
                
             </React.Fragment>
         )

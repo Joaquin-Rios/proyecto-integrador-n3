@@ -1,4 +1,5 @@
-import react, {Component} from 'react'
+import react, {Component} from 'react';
+import '../Buscador/Buscador.css';
 
 
 class Buscador extends Component{
@@ -9,9 +10,11 @@ class Buscador extends Component{
 
         }
     }
+
     evitarSubmit(event){
         event.preventDefailt()
     }
+
     controlarCambios(event){
         this.setState({filterBy: event.target.value},()=> this.props.filtrarMovies(this.state.filterBy))
         
@@ -20,9 +23,10 @@ class Buscador extends Component{
 
     render(){
         return(
-            <form onSubmit={(event)=>this.evitarSubmit(event)}>
-                <label>Name:</label>
+            <form className='buscador' onSubmit={(event)=>this.evitarSubmit(event)}>
+    
                 <input type="text" onChange={(event)=> this.controlarCambios(event)} value={this.state.filterBy} name="search" id="" placeholder="Search"/>
+    
                 <button type="submit"><i className="fas fa-search"></i></button>
             </form>
         )
