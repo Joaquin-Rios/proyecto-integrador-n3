@@ -16,6 +16,7 @@ class Movies extends Component{
         }
     }
     
+
     componentDidMount(){    
         let url =`https://api.themoviedb.org/3/movie/top_rated?api_key=3006ac419e664e7a2567a8acf0d5ba5c&language=en-US&page=1`;
 
@@ -108,7 +109,7 @@ class Movies extends Component{
                                 this.state.isLoaded === false ?
                                 <p>Cargando...</p> 
                                 :
-                                this.state.peliculas.map((pelicula, idx)=><MoviesCard key={pelicula.title + idx} dataPelicula={pelicula} delete={(peliculaABorrar)=>this.deleteMovie(peliculaABorrar)} />) 
+                                this.state.peliculas.map((pelicula, idx)=><MoviesCard  key={pelicula.title + idx} dataPelicula={pelicula} delete={(peliculaABorrar)=>this.deleteMovie(peliculaABorrar)} order = {this.state.order} />) 
                                 //La arrow function, para borrar, necesita saber a quién borrar por eso debemos pasar los parámetros.
                             }
                         </article>
@@ -118,7 +119,7 @@ class Movies extends Component{
                                 this.state.isLoaded === false ?
                                 <p>Cargando...</p> 
                                 :
-                                this.state.peliculas.map((pelicula, idx)=><MoviesCard key={pelicula.title + idx} dataPelicula={pelicula} delete={(peliculaABorrar)=>this.deleteMovie(peliculaABorrar)} />) 
+                                this.state.peliculas.map((pelicula, idx)=><MoviesCard key={pelicula.title + idx} dataPelicula={pelicula} delete={(peliculaABorrar)=>this.deleteMovie(peliculaABorrar)} order = {this.state.order} />) 
                                 //La arrow function, para borrar, necesita saber a quién borrar por eso debemos pasar los parámetros.
                             }
                         </article>
