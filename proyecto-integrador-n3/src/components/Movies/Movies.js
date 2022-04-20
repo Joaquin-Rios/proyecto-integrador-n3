@@ -109,8 +109,10 @@ class Movies extends Component{
                                 this.state.isLoaded === false ?
                                 <p>Cargando...</p> 
                                 :
+                                
                                 this.state.peliculas.map((pelicula, idx)=><MoviesCard  key={pelicula.title + idx} dataPelicula={pelicula} delete={(peliculaABorrar)=>this.deleteMovie(peliculaABorrar)} order = {this.state.order} />) 
                                 //La arrow function, para borrar, necesita saber a quién borrar por eso debemos pasar los parámetros.
+                            
                             }
                         </article>
                         :
@@ -119,6 +121,7 @@ class Movies extends Component{
                                 this.state.isLoaded === false ?
                                 <p>Cargando...</p> 
                                 :
+                               
                                 this.state.peliculas.map((pelicula, idx)=><MoviesCard key={pelicula.title + idx} dataPelicula={pelicula} delete={(peliculaABorrar)=>this.deleteMovie(peliculaABorrar)} order = {this.state.order} />) 
                                 //La arrow function, para borrar, necesita saber a quién borrar por eso debemos pasar los parámetros.
                             }

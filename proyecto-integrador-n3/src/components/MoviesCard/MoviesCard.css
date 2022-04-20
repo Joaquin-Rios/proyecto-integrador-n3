@@ -29,7 +29,7 @@
 }
 .tarjetasColumn img{
     width: 40%;
-    margin-bottom: 20px; 
+    margin-bottom: 0px; 
 }
 
 .tarjetasRow img{
@@ -60,10 +60,15 @@
 
 @media (min-width:768px){
 
-.tarjetasRow img{
-    width: 100%;
-    height: 450px;
-    margin-bottom: 20px; 
+    .tarjetasRow img{
+        width: 100%;
+        height: 450px;
+        margin-bottom: 20px; 
+    }
+    .tarjetasColumn img{
+        width: 40%;
+        height: 400px;
+        margin-bottom: 20px; 
     }
 
 }
@@ -99,5 +104,6 @@
     }
     .tarjetasColumn img{
         width: 25%;
+        margin-bottom: 0px;
     }
 }
